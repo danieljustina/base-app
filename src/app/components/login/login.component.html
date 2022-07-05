@@ -1,0 +1,40 @@
+<div class="login d-flex justify-content-center align-items-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 d-flex justify-content-center align-items-center">
+                <div class="card">
+                    <h5 class="card-header d-flex justify-content-center align-items-center">
+                        <strong>Login</strong>
+                    </h5>
+                    <div class="card-body px-lg-5 pt-0">
+                        <form class="text-center" [formGroup]="loginForm" >
+                            <div class="row mt-3">
+                                <mat-form-field>
+                                    <mat-label>Email:</mat-label>
+                                    <input formControlName="email" matInput placeholder="Ex: teste@gmail.com" >
+                                    <mat-error>Email inválido</mat-error>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="row mt-3">
+                                <mat-form-field>
+                                    <mat-label>Senha:</mat-label>
+                                    <input formControlName="password" matInput [type]="typeInput" >
+                                    <mat-icon matSuffix (click)="modifyVisibilityPassword()" [matTooltip]="tolltip">{{iconPassword}}</mat-icon>
+                                    <mat-error>Senha inválida</mat-error>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="row mt-3">
+                                <button mat-raised-button color="primary" (click)="login()" [disabled]="loginForm.invalid">Entrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <img src="../../../assets/img/login.svg">
+            </div>
+        </div>
+    </div>
+</div>
