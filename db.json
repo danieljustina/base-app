@@ -1,26 +1,26 @@
 {
-    "tasks": [
-      {
-        "username": "lcrolly3",
-        "title": "Web Developer I",
-        "value": 183.58,
-        "date": "2021-07-10T20:39:48Z",
-        "id": 1
-      },
-      {
-        "username": "hmalitrott5",
-        "title": "Developer IV",
-        "value": 43.62,
-        "date": "2020-09-19T00:11:00Z",
-        "id": 2
-      }
-    ],
-    "account": [
-      {
-        "id": 1,
-        "name": "Admin",
-        "email": "admin@gmail.com",
-        "password": "teste123"
-      }
-    ]
-  }
+  "tasks": [
+    {
+      "username": "lcrolly3",
+      "title": "Web Developer I",
+      "value": 183.58,
+      "date": "2021-07-10T20:39:48Z",
+      "id": 1
+    },
+    {
+      "username": "hmalitrott5",
+      "title": "Developer IV",
+      "value": 43.62,
+      "date": "2020-09-19T00:11:00Z",
+      "id": 2
+    }
+  ],
+  "account": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "teste123"
+    }
+  ]
+}

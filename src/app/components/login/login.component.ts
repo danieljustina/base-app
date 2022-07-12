@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment';
+import { ILoginResponse } from './model/login-response';
+import { LoginService } from './model/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +15,12 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup = this.initForm();
   visibilityPassword = true;
 
-  constructor(private _formBuilder: FormBuilder) { 
-  }
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _toastr: ToastrService,
+    private _loginService: LoginService,
+    private _router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -24,18 +33,20 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // this._loginService.loginUser()
-    // .subscribe((res: ILoginResponse[]) => {
-    //   if (res.find(user => user.email === this.email.value && user.password === this.password.value)) {
-    //     this._toastr.success('Login efetuado com sucesso!', environment["titleMessage"]);
-    //     this._router.navigate(['list-payments']);
-    //     return;
-    //   }
-    //   this._toastr.warning('Usuário ou senha incorretos!', environment["titleMessage"]);
-    // },
-    // (erro) => {
-    //   this._toastr.error('Erro ao buscar registros!');
-    // })        
+    this._loginService.loginUser()
+    .subscribe({
+      next: (res: ILoginResponse[]) => {
+        if (res.find(user => user.email === this.email?.value && user.password === this.password?.value)) {
+          this._toastr.success('Login efetuado com sucesso!', environment["titleMessage"]);
+          //this._router.navigate(['list-payments']);
+          return;
+        }
+        this._toastr.warning('Usuário ou senha incorretos!', environment["titleMessage"]);
+      },
+      error: (erro) => {
+        this._toastr.error('Erro ao buscar registros!');
+      }   
+    })   
   }
 
   public modifyVisibilityPassword() {

@@ -21,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { LoginComponent } from './components/login/login.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { LoginComponent } from './components/login/login.component';
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
