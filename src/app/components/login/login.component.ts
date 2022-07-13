@@ -3,8 +3,8 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
-import { ILoginResponse } from './model/login-response';
-import { LoginService } from './model/login.service';
+import { ILoginResponse } from './models/login-response';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       next: (res: ILoginResponse[]) => {
         if (res.find(user => user.email === this.email?.value && user.password === this.password?.value)) {
           this._toastr.success('Login efetuado com sucesso!', environment["titleMessage"]);
-          //this._router.navigate(['list-payments']);
+          this._router.navigate(['list-payments']);
           return;
         }
         this._toastr.warning('Usuário ou senha incorretos!', environment["titleMessage"]);
