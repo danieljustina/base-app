@@ -23,13 +23,15 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ListPaymentsComponent } from './components/list-payments/list-payments.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ListPaymentsComponent
+    ListPaymentsComponent,
+    NotFoundComponent
   ],
   imports: [
     AppRoutingModule,
