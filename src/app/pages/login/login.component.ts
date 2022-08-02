@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { environment } from './../../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { ILoginResponse } from './models/login-response';
 import { LoginService } from './login.service';
 

@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { ListPaymentsComponent } from './components/list-payments/list-payments.component';
-import { LoginComponent } from './components/login/login.component';
+import { ListPaymentsComponent } from './pages/list-payments/list-payments.component';
+import { LoginComponent } from './pages/login/login.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
